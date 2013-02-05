@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dinner Planner</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <script src="libs/jquery-1.9.0.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
+	<script src="model/dishModel.js"></script>
+	<script src="model/dinnerModel.js"></script>
+	<script src="generalController.js"></script>
+	<script src="view/exampleView.js"></script>
+	<script src="view/exampleViewController.js"></script>
+	<script type="text/javascript">
+		//The global variable so we can accesse it from objects
+		var generalController;
+	
+		$(document).ready(function(e) {
+			var dishModel = new DishModel();
+			var dinnerModel = new DinnerModel(dishModel);
+		
+			generalController = new GeneralController(dishModel,dinnerModel);
+		});
+	</script>
+  </head>
+  <body>
+	<div class="container">
+		<h1>Dinner planner</h1>
+		<div id="exampleView">
+			<div class="row">
+				Number of guest <span id="numberOfGuests"></span>
+			</div>
+			<div class="row">
+				<button id="plusGuest" class="btn"><i class="icon-plus"></i></button>
+			    <button id="minusGuest" class="btn"><i class="icon-minus"></i></button>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>
