@@ -20,21 +20,47 @@
 			var dinnerModel = new DinnerModel(dishModel);
 		
 			generalController = new GeneralController(dishModel,dinnerModel);
+			$("#stageHeader").append(generalController.stage);
 		});
 	</script>
   </head>
   <body>
-	<div class="container">
-		<h1>Dinner planner</h1>
+  	<div class="span8">
+ 		<div id="stageView">
+ 			<div class="span6">
+ 				<h1 id="stageHeader"></h1>
+ 				<form class="navbar-search pull-left">
+  					<input type="text" class="search-query" placeholder="Search">
+				</form>
+ 			</div>
+ 			<div class="span1">
+ 				<a id="otherStage1">stage2</a><br>
+ 				<a id="otherStage2">stage3</a>
+ 			</div>
+ 		</div>
+ 		<div id="DishPickerView">
+ 			<ul class="thumbnails">
+ 				<li class="span2">
+ 					<a href="#" class="thumbnail">
+ 						<img src="images/bakedbrie.jpg" alt="">
+ 					</a>
+ 				</li>
+ 		</div>
+	</div>
+<div class="span4">
+
 		<div id="exampleView">
 			<div class="row">
-				Number of guest <span id="numberOfGuests"></span>
+				Number of guests: <span id="numberOfGuests"></span>
 			</div>
-			<div class="row">
+			<div class="btn-group">
 				<button id="plusGuest" class="btn"><i class="icon-plus"></i></button>
 			    <button id="minusGuest" class="btn"><i class="icon-minus"></i></button>
 			</div>
 		</div>
-	</div>
+
+	<h2>Current Menu</h2>
+
+</div>
   </body>
 </html>
