@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="utf-8">
+       <title>Dinner Planner</title>
+       <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+       <script src="libs/jquery-1.9.0.js"></script>
+       <script src="libs/bootstrap/js/bootstrap.js"></script>
+	   <script src="model/dishModel.js"></script>
+	   <script src="model/dinnerModel.js"></script>
+	   <script src="generalController.js"></script>
+	   <script src="view/exampleView.js"></script>
+	   <script src="view/exampleViewController.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span2"> 
+                    <ul class="thumbnails">
+                        <a href="#" class="thumbnail">
+                            <img src="images/bakedbrie.jpg">
+                        </a>
+                    </ul>
+                </div>
+                <div class="span3">
+                    <h2>Dish name</h2>
+                    <h4>Price: $ for persons</h4>
+                </div>
+                <div class= "span4 offset2">
+                    <div class="btn-group btn-group-vertical">
+                        <button type="button" class="btn btn-success" data-toggle="button"><i class="icon-ok"></i> Choose dish</button>
+                        <button type="button" class="btn btn-warning" data-toggle="button"><i class="icon-arrow-left"></i> Find another</button>
+                    </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <h3>Ingredients</h3>
+                    <h3>Preparation</h3> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
