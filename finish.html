@@ -9,6 +9,7 @@
 	<script src="model/dishModel.js"></script>
 	<script src="model/dinnerModel.js"></script>
 	<script src="generalController.js"></script>
+	<script src="view/finishView.js"></script>
 	<script src="view/exampleView.js"></script>
 	<script src="view/exampleViewController.js"></script>
 	<script type="text/javascript">
@@ -20,7 +21,7 @@
 			var dinnerModel = new DinnerModel(dishModel);
 		
 			generalController = new GeneralController(dishModel,dinnerModel);
-			$("#stageHeader").append(generalController.stage);
+			//$("#stageHeader").append(generalController.stage);
 		});
 	</script>
   </head>
@@ -29,11 +30,11 @@
   			<button class="btn">Edit</button>
  		<div id="preparationsView">
  			<h1> Dinner menu preparations</h1>
- 			<h2 id="starterHeading"></h2>
+ 			<h2 id="starterHeading">Starter: </h2>
  			<p id="starterDescription"></p>
- 			<h2 id="mainDishHeading"></h2>
+ 			<h2 id="mainDishHeading">Main: </h2>
  			<p id="mainDishDescription"></p>
- 			<h2 id="dessertHeading"></h2>
+ 			<h2 id="dessertHeading">Dessert: </h2>
  			<p id="dessertDescription"></p>
 
  		</div>
