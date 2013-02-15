@@ -1,21 +1,30 @@
 //ExampleView Object constructor
 function ExampleView(parent,dishModel,dinnerModel) {
-	
+	this.setupCurrentMenu = function() {
+		var starter = dishModel.getDish(dinnerModel.getSelectedDish('starter'));
+		var main = dishModel.getDish(dinnerModel.getSelectedDish('main'));
+		var dessert = dishModel.getDish(dinnerModel.getSelectedDish('dessert'));
+		$('#currentMenuList').empty();
+		if (!(typeof starter === 'undefined')) {
+			setupDishElement(starter, this.starterRemoveButton);
+		};
+		if (!(typeof main === 'undefined')) {
+			setupDishElement(main, this.mainDishRemoveButton);			
+		};
+		if (!(typeof dessert === 'undefined')) {
+			setupDishElement(dessert, this.dessertRemoveButton);			
+		};
+	}	
 	// Get all the relevant elements of the view (ones that show data
   // and/or ones that responed to interaction)
 	this.numberOfGuests = $("#numberOfGuests");
 	this.totalPrice = $("#totalPrice");
 	this.plusButton = $("#plusGuest");
 	this.minusButton = $("#minusGuest");
-	
-	//Creating the components dynamically. Here we create the following HTML content:
-	//
-	//<div class="row">
-	//  Total menu price <span id="totalPrice"></span>
-	//</div>
-	//
-	//and add it to the the exampleView 
-	
+	this.starterRemoveButton = $("<button>");
+	this.mainDishRemoveButton = $("<button>");
+	this.dessertRemoveButton = $("<button>");
+
 	//div we just store in temporary variable because we won't need it later
 	var div = $("<div>");
 	//we set the constant text
@@ -35,7 +44,7 @@ function ExampleView(parent,dishModel,dinnerModel) {
 	this.numberOfGuests.html(dinnerModel.getNumberOfGuests());
 	this.totalPrice.html(dinnerModel.getTotalMenuPrice());
 
-	setupCurrentMenu();
+	this.setupCurrentMenu();
 	
 	/*****************************************  
 	      Observer implementation    
@@ -48,24 +57,15 @@ function ExampleView(parent,dishModel,dinnerModel) {
 	this.update = function(arg){
 		this.numberOfGuests.html(dinnerModel.getNumberOfGuests());
 		this.totalPrice.html(dinnerModel.getTotalMenuPrice());
+		this.setupCurrentMenu();
+		console.log("updated view")
 	}
-	function setupCurrentMenu() {
-		var starter = dishModel.getDish(dinnerModel.getSelectedDish('starter'));
-		var main = dishModel.getDish(dinnerModel.getSelectedDish('main'));
-		var dessert = dishModel.getDish(dinnerModel.getSelectedDish('dessert'));
-		if (!(typeof starter === 'undefined')) {
-			setupDishElement(starter);
-		};
-		if (!(typeof main === 'undefined')) {
-		};
-		if (!(typeof dessert === 'undefined')) {
-		};
-	}
-	function setupDishElement(dish) {
+
+	function setupDishElement(dish, button) {
 		var li = $('<li>');
 		var div = $('<span>');
 		var img = $('<img>');
-		var button = $('<button>');
+		//var button = $('<button>');
 		img.attr('src',"images/" +dish.image);
 		img.attr('class','img-rounded dinnerMenuImage');
 		div.append(img);
@@ -73,10 +73,13 @@ function ExampleView(parent,dishModel,dinnerModel) {
 			dishModel.getCostForDish(dinnerModel.getSelectedDish('starter')));
 		button.attr('type','button');
 		button.attr('class','btn btn-danger');
+		button.attr('status','hidden');
 		var icon = $('<i>');
 		icon.attr('class','icon-remove');
 		button.append(icon);
+
 		div.append(button);
+
 		li.append(div);
 		$('#currentMenuList').append(li);
 	}
