@@ -25,6 +25,7 @@ function ExampleView(parent,dishModel,dinnerModel) {
 	this.mainDishRemoveButton = $("<button>");
 	this.dessertRemoveButton = $("<button>");
 
+
 	//div we just store in temporary variable because we won't need it later
 	var div = $("<div>");
 	//we set the constant text
@@ -57,8 +58,7 @@ function ExampleView(parent,dishModel,dinnerModel) {
 	this.update = function(arg){
 		this.numberOfGuests.html(dinnerModel.getNumberOfGuests());
 		this.totalPrice.html(dinnerModel.getTotalMenuPrice());
-		this.setupCurrentMenu();
-		console.log("updated view")
+		if (arg === 'menu') this.setupCurrentMenu();
 	}
 
 	function setupDishElement(dish, button) {
@@ -71,17 +71,18 @@ function ExampleView(parent,dishModel,dinnerModel) {
 		div.append(img);
 		div.append(dish.type +": " +dish.name+" Cost: "+
 			dishModel.getCostForDish(dinnerModel.getSelectedDish('starter')));
-		button.attr('type','button');
-		button.attr('class','btn btn-danger');
-		button.attr('status','hidden');
-		var icon = $('<i>');
-		icon.attr('class','icon-remove');
-		button.append(icon);
-
+		setupButton(button);
 		div.append(button);
 
 		li.append(div);
 		$('#currentMenuList').append(li);
+	}
+	function setupButton(button) {
+		button.attr('type','button');
+		button.attr('class','btn btn-danger');
+		var icon = $('<i>');
+		icon.attr('class','icon-remove');
+		button.append(icon);
 	}
 }
  

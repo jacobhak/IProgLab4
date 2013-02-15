@@ -55,7 +55,7 @@ function DinnerModel(dishModel) {
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
 		this._menu[dishModel.getDish(id).type] = id; 
-		this.notifyObservers();
+		this.notifyObservers('menu');
 	}
 
 	//Removes dish from menu
@@ -64,7 +64,7 @@ function DinnerModel(dishModel) {
 		if(this._menu[type] == id) {
 			delete this._menu[type];
 		}
-		this.notifyObservers();
+		this.notifyObservers('menu');	
 	}
 
 	/*****************************************  
