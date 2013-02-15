@@ -13,10 +13,10 @@
 	  	 <script src="view/exampleViewController.js"></script>
 			<script type="text/javascript">
 			//popup-window
-			//function popupWindow() {
-			//	theWindow = window.open("popup.html", "theWindow", "width=700, height=600");
-			//	theWindow.moveTo(0,0);
-			//}
+			function popupWindow() {
+				theWindow = window.open("popup.html", "theWindow", "width=700, height=600");
+				theWindow.moveTo(0,0);
+			}
 			</script>
     </head>
     <body>
