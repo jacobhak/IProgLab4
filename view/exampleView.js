@@ -34,6 +34,8 @@ function ExampleView(parent,dishModel,dinnerModel) {
 	//Set the inital values of the components
 	this.numberOfGuests.html(dinnerModel.getNumberOfGuests());
 	this.totalPrice.html(dinnerModel.getTotalMenuPrice());
+
+	setupCurrentMenu();
 	
 	/*****************************************  
 	      Observer implementation    
@@ -46,6 +48,23 @@ function ExampleView(parent,dishModel,dinnerModel) {
 	this.update = function(arg){
 		this.numberOfGuests.html(dinnerModel.getNumberOfGuests());
 		this.totalPrice.html(dinnerModel.getTotalMenuPrice());
+	}
+	function setupCurrentMenu() {
+		var starter = dishModel.getDish(dinnerModel.getSelectedDish('starter'));
+		var main = dishModel.getDish(dinnerModel.getSelectedDish('main'));
+		var dessert = dishModel.getDish(dinnerModel.getSelectedDish('dessert'));
+		if (!(typeof starter === 'undefined')) {
+			var li = $('<li>');
+			var img = $('<img>');
+			img.attr('src',"images/" +starter.image);
+			img.attr('class','img-rounded');
+			li.append(img);
+			$('#currenMenuList').append(li);
+		};
+		if (!(typeof main === 'undefined')) {
+		};
+		if (!(typeof dessert === 'undefined')) {
+		};
 	}
 }
  
