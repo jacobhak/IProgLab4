@@ -11,6 +11,12 @@
 	   <script src="generalController.js"></script>
 	   <script src="view/exampleView.js"></script>
 	   <script src="view/exampleViewController.js"></script>
+		<script type="text/javascript">				
+					$(document).ready(function(e) {
+					var dishModel = new DishModel();
+					var dinnerModel = new DinnerModel(dishModel);
+				}
+		</script>
     </head>
     <body>
         <div class="container">
@@ -25,6 +31,7 @@
                 <div class="span3">
                     <h2>Dish name</h2>
                     <h4>Price: $ for persons</h4>
+										<h4 id="numberOfGuests2"></h4>
                 </div>
                 <div class= "span4 offset1">
                     <div class="btn-group btn-group-vertical">

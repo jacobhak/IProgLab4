@@ -8,7 +8,7 @@
     <script src="libs/bootstrap/js/bootstrap.js"></script>
 		<script src="model/dishModel.js"></script>
 		<script src="model/dinnerModel.js"></script>
-		<script src="generalController.js"></script>
+		
 		<script src="view/exampleView.js"></script>
 		<script src="view/exampleViewController.js"></script>
 		<script type="text/javascript">
@@ -44,28 +44,6 @@
  			<div class="span8">
  				<iframe src="dishes.html" width="560" height="200"></iframe>
  			</div>
-		<!--
- 		<div id="DishPickerView">
- 			<ul class="thumbnails">
- 				<li class="span2">
- 					<a href="popup.html" class="thumbnail">
- 						<img src="images/bakedbrie.jpg">
- 					</a>
- 				<li class="span2">
- 					<a href="#" class="thumbnail">
- 						<img src="images/meatballs.jpg">
- 					</a>
- 				<li class="span2">
- 					<a href="#" class="thumbnail">
- 						<img src="images/bakedbrie.jpg">
- 					</a>
- 				<li class="span2">
- 					<a href="#" class="thumbnail">
- 						<img src="images/bakedbrie.jpg">
- 					</a>
- 				</li>
- 		</div>
- 		-->
 	 	</div>
 	</div>
 <div class="span4">

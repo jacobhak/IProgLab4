@@ -12,10 +12,9 @@
 	   		<script src="view/exampleView.js"></script>
 	  	 <script src="view/exampleViewController.js"></script>
 			<script type="text/javascript">
-			//popup-window
-			function popupWindow() {
-				theWindow = window.open("popup.html", "theWindow", "width=700, height=600");
-				theWindow.moveTo(0,0);
+			function popupWindow(){
+				theWindow=window.open("popup.html","theWindow","height=600, width=600");
+
 			}
 			</script>
     </head>
@@ -26,17 +25,14 @@
                 <li class="span2">
                         <img src="images/bakedbrie.jpg" onClick="popupWindow()" class="thumbnail">
                 <li class="span2">
-                    <a href="javascript:popupWindow()" class="thumbnail">
-                        <img src="images/meatballs.jpg">
-                    </a>
+                        <img src="images/bakedbrie.jpg" onClick="popupWindow()" class="thumbnail">
+
                 <li class="span2">
-                    <a href="javascript:popupWindow()" class="thumbnail">
-                        <img src="images/bakedbrie.jpg">
-                    </a>
+                        <img src="images/bakedbrie.jpg" onClick="popupWindow()" class="thumbnail">
+
                 <li class="span2">
-                    <a href="javascript:popupWindow()" class="thumbnail">
-                        <img src="images/bakedbrie.jpg">
-                    </a>
+                        <img src="images/bakedbrie.jpg" onClick="popupWindow()" class="thumbnail">
+
                 </li>
         </div>
         </div>
