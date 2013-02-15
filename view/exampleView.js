@@ -54,17 +54,31 @@ function ExampleView(parent,dishModel,dinnerModel) {
 		var main = dishModel.getDish(dinnerModel.getSelectedDish('main'));
 		var dessert = dishModel.getDish(dinnerModel.getSelectedDish('dessert'));
 		if (!(typeof starter === 'undefined')) {
-			var li = $('<li>');
-			var img = $('<img>');
-			img.attr('src',"images/" +starter.image);
-			img.attr('class','img-rounded');
-			li.append(img);
-			$('#currenMenuList').append(li);
+			setupDishElement(starter);
 		};
 		if (!(typeof main === 'undefined')) {
 		};
 		if (!(typeof dessert === 'undefined')) {
 		};
+	}
+	function setupDishElement(dish) {
+		var li = $('<li>');
+		var div = $('<span>');
+		var img = $('<img>');
+		var button = $('<button>');
+		img.attr('src',"images/" +dish.image);
+		img.attr('class','img-rounded dinnerMenuImage');
+		div.append(img);
+		div.append(dish.type +": " +dish.name+" Cost: "+
+			dishModel.getCostForDish(dinnerModel.getSelectedDish('starter')));
+		button.attr('type','button');
+		button.attr('class','btn btn-danger');
+		var icon = $('<i>');
+		icon.attr('class','icon-remove');
+		button.append(icon);
+		div.append(button);
+		li.append(div);
+		$('#currentMenuList').append(li);
 	}
 }
  

@@ -32,6 +32,21 @@ function DishModel() {
 		}
 	}
 
+	this.getCostForDish = function (id) {
+		for (key in this.dishes) {
+			if (this.dishes[key].id == id) {
+				var cost = 0;
+				for (ingredient in this.dishes[key].ingredients) {
+					console.log();
+					console.log();
+					cost += this.dishes[key].ingredients[ingredient].price;
+				}
+				console.log("calculated cost for "+id+": " + cost);
+				return cost;
+			};
+		}
+	}
+
 
 	// the dishes model it contains an array of all the 
 	// dishes in the database. each dish has id, name, type,

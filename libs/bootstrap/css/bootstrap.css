@@ -8,6 +8,11 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.dinnerMenuImage {
+  width: 60px;
+  height: 60px;
+}
+
 article,
 aside,
 details,
