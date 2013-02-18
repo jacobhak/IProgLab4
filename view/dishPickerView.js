@@ -13,6 +13,7 @@ function DishPickerView(stage, parent, dishModel, dinnerModel) {
 		img.attr('id',dishes[i].id);
 		a.attr('href','#');
 		a.attr('class','thumbnail');
+		a.attr('data-toggle','modal');
 		img.attr('src',"images/"+dishes[i].image);
 		a.append(img);
 		li.append(a);
