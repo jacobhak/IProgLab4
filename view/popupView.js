@@ -1,5 +1,8 @@
 function PopupView(dish,dishModel,dinnerModel) {
 
+	this.dish = dish;
+	
+	this.chooseButton = $("#chooseButton");
 	this.popupDishName = $("#popupDishName");
 	this.dishImage = $("#dishImage");
 	this.popupPriceAndGuests = $("#popupPriceAndGuests");

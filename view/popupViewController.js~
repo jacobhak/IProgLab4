@@ -1,0 +1,7 @@
+function PopupViewController(view,dishModel,dinnerModel) {
+	view.chooseButton.click(function(){
+		dinnerModel.addDishToMenu(view.dish.id);
+		console.log("CONTROLER");
+		$('#popup').modal('toggle');
+	});
+}
