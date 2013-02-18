@@ -31,7 +31,7 @@
                 <div class="span3">
                     <h2>Dish name</h2>
                     <h4>Price: $ for persons</h4>
-										<h4 id="numberOfGuests2"></h4>
+										<h4 id="numberOfGuests"></h4>
                 </div>
                 <div class= "span4 offset1">
                     <div class="btn-group btn-group-vertical">

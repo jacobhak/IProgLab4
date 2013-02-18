@@ -4,7 +4,6 @@ function GeneralController(dishModel,dinnerModel) {
 	this.finishButton = $("#finishButton");
 	this.editButton = $("#editButton");
 
-	
 	var exampleView = new ExampleView($("#exampleView"),dishModel,dinnerModel);
 	var exampleViewController = new ExampleViewController(exampleView,dishModel,dinnerModel);
 	var finishView = new FinishView($("#preparationsView"),$("#ingredientsView"),dishModel,dinnerModel);
@@ -18,6 +17,5 @@ function GeneralController(dishModel,dinnerModel) {
 		$("#finishBody").hide();
 		$("#mainBody").show();
 	})
-
 }
 

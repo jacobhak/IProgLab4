@@ -14,6 +14,7 @@
 	<script src="view/finishView.js"></script>
 	<script src="view/dishPickerView.js"></script>
 	<script src="view/dishPickerViewController.js"></script>
+	<script src="view/popupView.js"></script>
 	<script type="text/javascript">
 		//The global variable so we can accesse it from objects
 		var generalController;
@@ -99,5 +100,34 @@
 			</div>	
 	</div>
 </div>
-</body>
+<!-- Button to trigger modal -->
+<a href="#popup" role="button" class="btn" data-toggle="modal">Show dish</a>
+ 
+<!-- Modal -->
+<div id="popup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="popupLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	<div class="row-fluid">
+		<img id="dishImage">
+		<div id="popupDishName">
+		</div>
+		<div id="popupPriceAndGuests">
+		</div>
+		<div class="btn-group btn-group-vertical">
+			<button type="button" class="btn btn-success" data-toggle="button"><i class="icon-ok"></i> Choose dish</button>
+			<button type="button" class="btn btn-warning" data-toggle="button"><i class="icon-arrow-left"></i> Find another</button>
+		</div>
+    </div>
+  <div class="modal-body">
+     <div class="row">
+		<div id="ingredientBody" class="span3">
+			<h3>Ingredients</h3>
+		</div>
+		<div id="preparationBody" class="span3">
+			<h3>Preparation</h3>
+		</div>
+	</div>
+  </div>
+</div>
+  </body>
 </html>
