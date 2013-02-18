@@ -6,12 +6,15 @@ function ExampleView(parent,dishModel,dinnerModel) {
 		var dessert = dishModel.getDish(dinnerModel.getSelectedDish('dessert'));
 		$('#currentMenuList').empty();
 		if (!(typeof starter === 'undefined')) {
+			this.starterRemoveButton = $("<button>");
 			setupDishElement(starter, this.starterRemoveButton);
 		};
 		if (!(typeof main === 'undefined')) {
+			this.mainDishRemoveButton = $("<button>");
 			setupDishElement(main, this.mainDishRemoveButton);			
 		};
 		if (!(typeof dessert === 'undefined')) {
+			this.dessertRemoveButton = $("<button>");
 			setupDishElement(dessert, this.dessertRemoveButton);			
 		};
 	}	
@@ -58,7 +61,10 @@ function ExampleView(parent,dishModel,dinnerModel) {
 	this.update = function(arg){
 		this.numberOfGuests.html(dinnerModel.getNumberOfGuests());
 		this.totalPrice.html(dinnerModel.getTotalMenuPrice());
-		if (arg === 'menu') this.setupCurrentMenu();
+		if (arg === 'menu') {
+			this.setupCurrentMenu();
+			new ExampleViewController(this,dishModel,dinnerModel);
+		}
 	}
 
 	function setupDishElement(dish, button) {
@@ -78,6 +84,7 @@ function ExampleView(parent,dishModel,dinnerModel) {
 		$('#currentMenuList').append(li);
 	}
 	function setupButton(button) {
+		button.empty();
 		button.attr('type','button');
 		button.attr('class','btn btn-danger');
 		var icon = $('<i>');
