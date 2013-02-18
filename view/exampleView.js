@@ -31,6 +31,7 @@ function ExampleView(parent,dishModel,dinnerModel) {
 
 	//div we just store in temporary variable because we won't need it later
 	var div = $("<div>");
+	div.attr('style', 'text-align:center');
 	//we set the constant text
 	div.html("Total menu price ");
 	//and we add the row class
