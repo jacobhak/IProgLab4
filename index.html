@@ -22,10 +22,13 @@
 		
 			generalController = new GeneralController(dishModel,dinnerModel);
 			$("#stageHeader").append(generalController.stage);
+			$("#finishBody").hide();
 		});
 	</script>
   </head>
   <body>
+
+<div id="mainBody">
   	<div class="span8">
   		<div class="container">
  		<div id="stageView">
@@ -59,8 +62,40 @@
 
 		<h2>Current Menu</h2>
 		<ul id="currentMenuList" style="list-style: none;margin: 0;"></ul>
-		<button type="button" class="btn btn-primary" data-toggle="button">Finish</button>
+		<button type="button" class="btn btn-primary" data-toggle="button" id="finishButton">Finish</button>
 		</div>
 </div>
-  </body>
+</div>
+
+<div id="finishBody">
+<div class="span7">
+  			<button class="btn" id="editButton">Edit</button>
+ 		<div id="preparationsView" style="text-align: center">
+ 			<h1> Dinner menu preparations</h1>
+ 			<h2 id="starterHeading" ></h2>
+ 			<p id="starterDescription"></p>
+ 			<h2 id="mainDishHeading"></h2>
+ 			<p id="mainDishDescription"></p>
+ 			<h2 id="dessertHeading"></h2>
+ 			<p id="dessertDescription"></p>
+
+ 		</div>
+	</div>
+	<div class="span5">
+			<div id="ingredientsView">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Ingredient</th>
+							<th>Quantity</th>
+							<th>Cost</th>
+						</tr>
+					</thead>
+					<tbody id="ingredientsTableBody">
+					</tbody>
+				</table>
+			</div>	
+	</div>
+</div>
+</body>
 </html>

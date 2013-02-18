@@ -15,6 +15,7 @@ function FinishView(preparationsParent, ingredientsParent,dishModel,dinnerModel)
 	
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
+		clear();
 		setupDescription();
 		setupIngredients();
 	}
@@ -45,5 +46,14 @@ function FinishView(preparationsParent, ingredientsParent,dishModel,dinnerModel)
 			tr.append('<td>'+ingredient.price*dinnerModel.getNumberOfGuests()+'</td>');
 			$("#ingredientsTableBody").append(tr);
 		};
+	}
+	function clear() {
+		$("#starterHeading").empty();
+		$("#starterDescription").empty();
+		$("#mainDishHeading").empty();
+		$("#mainDishDescription").empty();
+		$("#dessertHeading").empty();
+		$("#dessertDescription").empty();
+		$("#ingredientsTableBody").empty();
 	}
 }
