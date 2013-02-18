@@ -3,8 +3,9 @@ function GeneralController(dishModel,dinnerModel) {
 	 this.stage = "starter";
 	
 	 var exampleView = new ExampleView($("#exampleView"),dishModel,dinnerModel);
-   var exampleViewController = new ExampleViewController(exampleView,dishModel,dinnerModel);
+	var exampleViewController = new ExampleViewController(exampleView,dishModel,dinnerModel);
    //var finishView = new FinishView($("#preparationsView"),$("#ingredientsView"),dishModel,dinnerModel);
+	var popupView = new PopupView(dishModel.getDish("2"),dishModel,dinnerModel);
 		
 }
 
