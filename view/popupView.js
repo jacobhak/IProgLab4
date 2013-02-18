@@ -6,12 +6,13 @@ function PopupView(dish,dishModel,dinnerModel) {
 	this.ingredientBody = $("#ingredientBody");
 	this.preparationBody = $("#preparationBody");
 	
+	clear();
 	setupImage();
 	setupPopupDishName(dish);
 	setupPopupPriceAndGuests(dish);
 	setupIngredientBody(dish);
 	setupPreparationBody(dish);
-
+	
 	function setupImage() {
 
 		$("#dishImage").attr('src',"images/" +dish.image);
