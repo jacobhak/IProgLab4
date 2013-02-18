@@ -19,7 +19,7 @@ function PopupView(dish,dishModel,dinnerModel) {
 	}
 
 	function setupPopupPriceAndGuests(dish) {
-		var price = dishModel.getCostForDish(dish);
+		var price = dishModel.getCostForDish(dish.id);
 		var guests = dinnerModel.getNumberOfGuests();
 		var span = $("<span>");
 		span.append("Price: "+price+" for "+guests+" persons.");
@@ -46,5 +46,13 @@ function PopupView(dish,dishModel,dinnerModel) {
 
 	function setupPopupDishName(dish) {
 		$("#popupDishName").append('<h2>'+dish.name+'</h2>');
+	}
+	
+	function clear() {
+		$("#popupDishName").empty();
+		$("#dishImage").empty();
+		$("#popupPriceAndGuests").empty();
+		$("#ingredientBody").empty();
+		$("#preparationBody").empty();
 	}
 }
